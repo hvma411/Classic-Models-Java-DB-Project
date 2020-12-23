@@ -14,15 +14,28 @@ public class EmployeeService {
     @Autowired
     EmployeeRepository repository;
 
-    public List<Employee> getAllEmployees() {
+    public List<Employee> getAllEmployees(String officeCode) {
         List<Employee> employeeList = repository.findAll();
 
+        ArrayList<Employee> employeesFromOffice = new ArrayList<Employee>();
+
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (employeeList.get(i).getOffice().getOfficeCode() == officeCode) {
+                employeesFromOffice.add(employeeList.get(i));
+            }
+        }
+
         if(employeeList.size() > 0) {
-            return employeeList;
+            return employeesFromOffice;
         } else {
             return new ArrayList<Employee>();
         }
     }
+
+//    @Override
+//    public String toString() {
+//        return
+//    }
 
     // TODO More convenience methods for INSERT, UPDATE and DELETE
 }
