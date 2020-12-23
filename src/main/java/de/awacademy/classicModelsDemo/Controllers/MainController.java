@@ -69,4 +69,13 @@ public class MainController {
         return model;
     }
 
+    @GetMapping("/allemployees")
+    public ModelAndView allPeoples(){
+        List<Employee> employeeList = employeeService.getAllEmployeesOfCompany();
+        ModelAndView model = new ModelAndView("allEmployees");
+
+        model.addObject("employees", employeeList);
+        return model;
+    }
+
 }

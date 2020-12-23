@@ -32,6 +32,16 @@ public class EmployeeService {
         }
     }
 
+    public List<Employee> getAllEmployeesOfCompany() {
+        List<Employee> employeeList = repository.findAll();
+        if(employeeList.size() > 0) {
+            return employeeList;
+        } else {
+            return new ArrayList<Employee>();
+        }
+    }
+
+
 //    @Override
 //    public String toString() {
 //        return
