@@ -33,7 +33,7 @@
             <th>Full Name</th>
             <th>Phone Extension</th>
             <th>Email</th>
-            <th>Office</th>
+            <th style="min-width: 300px">Office</th>
             <th>Boss</th>
             <th>Job Title</th>
         </tr>
@@ -42,7 +42,7 @@
             <td th:text="${employee.firstName} + ' ' + ${employee.lastName}"></td>
             <td th:text="${employee.extension}"></td>
             <td th:text="${employee.email}"></td>
-            <td th:text="${employee.office}"></td>
+            <td th:text="${employee.office.officeCode} + ' ' + ${employee.office.city} + ' ' + ${employee.office.addressLine1} + ' ' + ${employee.office.addressLine2} + ' ' + ${employee.office.state} + ' ' + ${employee.office.country} + ' ' + ${employee.office.postalCode} + ' ' + ${employee.office.territory}"></td>
             <td th:text="${employee.boss}"></td>
             <td th:text="${employee.jobTitle}"></td>
         </tr>
