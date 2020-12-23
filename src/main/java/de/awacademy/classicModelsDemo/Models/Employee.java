@@ -97,15 +97,6 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "employeeNumber=" + employeeNumber +
-                ", lastName='" + lastName + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", extension='" + extension + '\'' +
-                ", email='" + email + '\'' +
-                ", office=" + office +
-                ", boss=" + boss +
-                ", jobTitle='" + jobTitle + '\'' +
-                '}';
+        return String.format("%s %s", firstName, lastName);
     }
 }
